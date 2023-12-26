@@ -14,6 +14,8 @@ struct MyAppointmentsView: View {
     @State private var appointments: [Appointment] = []
     
     func getAllAppointments() async {
+        guard let patientID = AuthenticationManager.shared.patientID else { return }
+        
         do {
             if let appointments = try await service.getAllAppointmentsFromPatient(patientID: patientID) {
                 self.appointments = appointments

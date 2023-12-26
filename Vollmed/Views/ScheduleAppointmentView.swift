@@ -44,6 +44,8 @@ struct ScheduleAppointmentView: View {
     }
     
     func scheduleAppointment() async {
+        guard let patientID = AuthenticationManager.shared.patientID else { return }
+        
         do {
             if let _ = try await service.scheduleAppointment(specialistID: specialistID, patientID: patientID, date: selectedDate.convertToString()) {
                 isAppointmentScheduled = true
