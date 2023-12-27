@@ -30,6 +30,7 @@ struct HomeViewModel {
         case .success(let response):
             return response
         case .failure(let error):
+            print(error)
             throw error
         }
     }

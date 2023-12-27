@@ -14,7 +14,7 @@ struct LoadingView<Content>: View where Content: View {
     
     var body: some View {
         GeometryReader { geometry in
-            ZStack(alignment: .center) {
+            ZStack {
                 self.content()
                     .disabled(self.isLoading)
                     .blur(radius: self.isLoading ? 3 : 0)

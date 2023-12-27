@@ -15,7 +15,6 @@ struct SignInView: View {
     @State private var password: String = ""
     @State private var showAlert: Bool = false
     @State private var isLoading: Bool = false
-    @State private var loadingLabel: String = "Carregando."
   
     func login() async {
         isLoading = true
@@ -83,6 +82,8 @@ struct SignInView: View {
                         .bold()
                         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .center)
                 }
+                
+                Spacer()
             }
             .padding()
             .navigationBarBackButtonHidden()
