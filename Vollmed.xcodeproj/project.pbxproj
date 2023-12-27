@@ -32,6 +32,15 @@
 		6ADA3ACD2B3B7C0D0009C5FE /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADA3ACC2B3B7C0D0009C5FE /* LoadingView.swift */; };
 		6ADA3ACF2B3B91790009C5FE /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADA3ACE2B3B91790009C5FE /* KeychainHelper.swift */; };
 		6ADA3AD22B3B95B00009C5FE /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADA3AD12B3B95B00009C5FE /* AuthenticationManager.swift */; };
+		6AF915992B3C62250020436F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF915982B3C62250020436F /* HomeViewModel.swift */; };
+		6AF9159F2B3C6A3B0020436F /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF9159E2B3C6A3B0020436F /* Endpoint.swift */; };
+		6AF915A12B3C6BC00020436F /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF915A02B3C6BC00020436F /* RequestMethod.swift */; };
+		6AF915A32B3C6C4A0020436F /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF915A22B3C6C4A0020436F /* RequestError.swift */; };
+		6AF915A52B3C6D2E0020436F /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF915A42B3C6D2E0020436F /* HTTPClient.swift */; };
+		6AF915A72B3C73A50020436F /* HomeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF915A62B3C73A50020436F /* HomeEndpoint.swift */; };
+		6AF915A92B3C75D80020436F /* HomeNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF915A82B3C75D80020436F /* HomeNetworkingService.swift */; };
+		6AF915AB2B3C7C960020436F /* AuthenticationEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF915AA2B3C7C960020436F /* AuthenticationEndpoint.swift */; };
+		6AF915AD2B3C7E2C0020436F /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF915AC2B3C7E2C0020436F /* AuthenticationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +70,15 @@
 		6ADA3ACC2B3B7C0D0009C5FE /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		6ADA3ACE2B3B91790009C5FE /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		6ADA3AD12B3B95B00009C5FE /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		6AF915982B3C62250020436F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		6AF9159E2B3C6A3B0020436F /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		6AF915A02B3C6BC00020436F /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
+		6AF915A22B3C6C4A0020436F /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		6AF915A42B3C6D2E0020436F /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		6AF915A62B3C73A50020436F /* HomeEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEndpoint.swift; sourceTree = "<group>"; };
+		6AF915A82B3C75D80020436F /* HomeNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNetworkingService.swift; sourceTree = "<group>"; };
+		6AF915AA2B3C7C960020436F /* AuthenticationEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationEndpoint.swift; sourceTree = "<group>"; };
+		6AF915AC2B3C7E2C0020436F /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,9 +160,11 @@
 			children = (
 				6ADA3AD02B3B95A30009C5FE /* Managers */,
 				6AAB09732B38A924009FE259 /* Extensions */,
+				6AF915972B3C61E00020436F /* ViewModels */,
 				484BEEFB2AB0F56C0033C07A /* Services */,
 				484BEEFA2AB0F5680033C07A /* Models */,
 				484BEEF82AB0F55F0033C07A /* Views */,
+				6AF9159A2B3C69E10020436F /* Networking */,
 				48539DEC2AB0F47C005BD7C9 /* VollmedApp.swift */,
 				48539DEE2AB0F47C005BD7C9 /* ContentView.swift */,
 				48539DF02AB0F47D005BD7C9 /* Assets.xcassets */,
@@ -176,6 +196,53 @@
 				6ADA3AD12B3B95B00009C5FE /* AuthenticationManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		6AF915972B3C61E00020436F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				6AF915982B3C62250020436F /* HomeViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6AF9159A2B3C69E10020436F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				6AF9159B2B3C69F60020436F /* Base */,
+				6AF9159C2B3C69FE0020436F /* Endpoints */,
+				6AF9159D2B3C6A0D0020436F /* Services */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		6AF9159B2B3C69F60020436F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				6AF9159E2B3C6A3B0020436F /* Endpoint.swift */,
+				6AF915A02B3C6BC00020436F /* RequestMethod.swift */,
+				6AF915A22B3C6C4A0020436F /* RequestError.swift */,
+				6AF915A42B3C6D2E0020436F /* HTTPClient.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		6AF9159C2B3C69FE0020436F /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				6AF915A62B3C73A50020436F /* HomeEndpoint.swift */,
+				6AF915AA2B3C7C960020436F /* AuthenticationEndpoint.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		6AF9159D2B3C6A0D0020436F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6AF915A82B3C75D80020436F /* HomeNetworkingService.swift */,
+				6AF915AC2B3C7E2C0020436F /* AuthenticationService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,15 +315,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AF915A12B3C6BC00020436F /* RequestMethod.swift in Sources */,
 				6AAB097D2B38C9CD009FE259 /* Appointment.swift in Sources */,
 				6AAB09752B38A933009FE259 /* Date+.swift in Sources */,
 				6AAB09792B38B6E9009FE259 /* ScheduleAppointment.swift in Sources */,
 				48539DEF2AB0F47C005BD7C9 /* ContentView.swift in Sources */,
 				6AAB09772B38B501009FE259 /* String+.swift in Sources */,
 				6ADA3ACF2B3B91790009C5FE /* KeychainHelper.swift in Sources */,
+				6AF915AD2B3C7E2C0020436F /* AuthenticationService.swift in Sources */,
 				6ADA3AC52B3B24B40009C5FE /* InputFieldView.swift in Sources */,
+				6AF915A32B3C6C4A0020436F /* RequestError.swift in Sources */,
 				484BEF052AB0F7970033C07A /* HomeView.swift in Sources */,
+				6AF915A52B3C6D2E0020436F /* HTTPClient.swift in Sources */,
 				6AAB097F2B38D2B2009FE259 /* CancelAppointmentView.swift in Sources */,
+				6AF915AB2B3C7C960020436F /* AuthenticationEndpoint.swift in Sources */,
 				484BEEFD2AB0F5750033C07A /* Specialist.swift in Sources */,
 				484BEF012AB0F6090033C07A /* ButtonView.swift in Sources */,
 				6ADA3ACB2B3B6B280009C5FE /* UserDefaultsHelper.swift in Sources */,
@@ -267,10 +339,14 @@
 				6ADA3AC92B3B457D0009C5FE /* Login.swift in Sources */,
 				484BEEFF2AB0F59D0033C07A /* WebService.swift in Sources */,
 				6ADA3AC32B3B127E0009C5FE /* SignUpView.swift in Sources */,
+				6AF915992B3C62250020436F /* HomeViewModel.swift in Sources */,
 				48539DED2AB0F47C005BD7C9 /* VollmedApp.swift in Sources */,
+				6AF915A72B3C73A50020436F /* HomeEndpoint.swift in Sources */,
 				6AAB097B2B38C201009FE259 /* MyAppointmentsView.swift in Sources */,
 				6ADA3AD22B3B95B00009C5FE /* AuthenticationManager.swift in Sources */,
 				6AAB09722B38A6B8009FE259 /* ScheduleAppointmentView.swift in Sources */,
+				6AF915A92B3C75D80020436F /* HomeNetworkingService.swift in Sources */,
+				6AF9159F2B3C6A3B0020436F /* Endpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
