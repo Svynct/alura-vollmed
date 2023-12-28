@@ -12,15 +12,23 @@ let patientIDKey = "app-vollmed-patient-id"
 
 class AuthenticationManager: ObservableObject {
     
+    // MARK: - Singleton
+    
     static let shared = AuthenticationManager()
+    
+    // MARK: - Attributes
     
     @Published var token: String?
     @Published var patientID: String?
+    
+    // MARK: - Init
     
     private init() {
         self.token = KeychainHelper.get(for: tokenKey)
         self.patientID = KeychainHelper.get(for: patientIDKey)
     }
+    
+    // MARK: - Token
     
     func saveToken(_ token: String) {
         KeychainHelper.save(value: token, key: tokenKey)
@@ -35,6 +43,8 @@ class AuthenticationManager: ObservableObject {
             self.token = nil
         }
     }
+    
+    // MARK: - PatientID
     
     func savePatientID(_ id: String) {
         KeychainHelper.save(value: id, key: patientIDKey)
